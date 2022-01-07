@@ -1,0 +1,87 @@
+{
+  "name": "@thundercore/drawing",
+  "version": "0.0.1",
+  "description": "",
+  "author": "ThunderToken Inc.",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "start": "ts-node -r tsconfig-paths/register --files src/main.ts",
+    "start:dev": "ts-node-dev --files --inspect=127.0.0.1:9229 src/main.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@godaddy/terminus": "^4.2.0",
+    "@nestjs/common": "^6.8.0",
+    "@nestjs/core": "^6.8.0",
+    "@nestjs/jwt": "^6.1.1",
+    "@nestjs/platform-express": "6.8.0",
+    "@nestjs/swagger": "^3.1.0",
+    "@nestjs/terminus": "^6.5.2",
+    "@types/ioredis": "^4.16.7",
+    "backoff-rxjs": "^6.3.2",
+    "class-transformer": "0.2.3",
+    "class-validator": "^0.10.1",
+    "dotenv": "^6.1.0",
+    "ethers": "^4.0.33",
+    "helmet": "3.21.1",
+    "ioredis": "^4.6.2",
+    "memory-cache": "^0.2.0",
+    "merge-deep": "^3.0.2",
+    "morgan": "1.9.1",
+    "nest-router": "^1.0.9",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.2",
+    "verror": "1.10.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@nestjs/testing": "^6.5.3",
+    "@types/dotenv": "6.1.0",
+    "@types/express": "^4.17.0",
+    "@types/jest": "^24.0.17",
+    "@types/memory-cache": "^0.2.0",
+    "@types/node": "^12.7.0",
+    "@types/pg": "7.4.14",
+    "@types/uuid": "^3.4.5",
+    "@types/verror": "1.10.3",
+    "husky": "^3.0.2",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "6.0.4",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  },
+  "jest": {
+    "clearMocks": true,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

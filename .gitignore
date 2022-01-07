@@ -1,0 +1,8 @@
+add.sh
+delete.sh
+
+node_modules
+dist
+build
+
+.env
